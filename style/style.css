@@ -23,10 +23,15 @@ body{
     font-family: Arial;
     background-color: #75B92F;
 }
+header {
+    width: 100%;
+    height: 150px;
+}
 .welcome>h1{
     font-size: 3em;
     text-align: center;
     display: inline-block;
+    margin: 20px;
 }
 .welcome>h1 a{
     text-decoration: none;
@@ -35,4 +40,34 @@ body{
 .logo{
     display: inline-block;
     float: left;
+    margin: 20px;
+}
+header>nav li{
+    text-decoration: none;
+    display: inline;
+    margin: 20px 0 0 20px;
+
+}
+header>nav li a {
+    text-decoration: none;
+    color: #B9722E;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.user{
+    float: right;
+    display: inline-block;
+}
+.user>img{
+    width: 100px;
+}
+.main {
+    width: 100%;
+    height: 500px;
 }
