@@ -6,7 +6,8 @@
     <title>Welcome</title>
 </head>
 <body>
+<?php require_once("php/header.php");?>
     <h1>Welcome</h1>
     <h2>Still under construction</h2>
 </body>
-</html>`
+<?php require_once("php/footer.php");?>
