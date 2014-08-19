@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style/style.css"/>
+    <title>Welcome</title>
+</head>
+<body>
 <header>
     <div class="logo">
         <img src="../image/bird_blue_cute.png" alt="Logo" width="100px"/>
