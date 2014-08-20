@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../style/style.css"/>
+<link rel="stylesheet" href="../styles/style.css"/>
 <footer>
     <hr/>
     <div>Just testing the external footer</div>

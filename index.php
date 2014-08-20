@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="style/style.css"/>
 
 <?php require_once("php/header.php");?>
 
