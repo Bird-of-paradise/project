@@ -2,14 +2,22 @@
 session_start();
 if(!isset($_SESSION['user'])){
     header("Location: loginForm.php");
+} else {
+    $user = $_SESSION['user'];
 }
 
 include 'php/dbFunction.php';
 
-echo 'Hello ',$_SESSION['user']['name'],'!';
+print_r($_FILES);
 
-$result = addAlbum('100-gaidi', $_SESSION['user']['id'], 'image/100-gaidi.png');
+if(isset($_POST['albumName'])){
 
-if($result){
-    echo 'The album is added successfully!';
+    $albumName = $_POST['albumName'];
+
+    $result = addAlbum($albumName, $user['id'], '');
+
+    if($result){
+        echo 'The ', $albumName, ' is added successfully!';
+    }
 }
+
