@@ -57,6 +57,42 @@ function getUser($userName)
     }
 }
 
+//Add user information in database album
+function addUser($user)
+{
+    $link = connectDatabase();
+    selectDatabase($link, 'album');
+    $sql = "INSERT INTO users (name, password, email) ".
+        "VALUES ('{$user['userName']}', '{$user['userPassword1']}', '{$user['email']}');";
+    $result = setQuery($link, $sql);
+    mysql_close($link);
 
+    if (!$result) {
+        echo "DB Error, could not query the database\n";
+        echo 'MySQL Error: ' . mysql_error();
+        exit;
+    } else {
+        return $result;
+    }
+}
+
+//Add new album in database album
+function addAlbum($albumName, $userId, $imgFileName)
+{
+    $link = connectDatabase();
+    selectDatabase($link, 'album');
+    $sql = "INSERT INTO albums (name, img_file, id_user) ".
+        "VALUES ('$albumName', '$imgFileName', '$userId');";
+    $result = setQuery($link, $sql);
+    mysql_close($link);
+
+    if (!$result) {
+        echo "DB Error, could not query the database\n";
+        echo 'MySQL Error: ' . mysql_error();
+        exit;
+    } else {
+        return $result;
+    }
+}
 
 

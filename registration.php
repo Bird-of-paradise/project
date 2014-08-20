@@ -34,7 +34,8 @@ if(isset($errorMessages)){
     header("Location: registrationForm.php");
 }
 
+addUser($_POST);
 $_SESSION['userName'] = $userName;
 header("Location: userPanel.php");
 
-//TODO Add user in database
+

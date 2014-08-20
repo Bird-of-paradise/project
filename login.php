@@ -10,6 +10,6 @@ $user = getUser($userName);
 if($user === false || $user['password'] !==  $password){
     header("Location: loginForm.php?error=1");
 } else {
-    $_SESSION['userName'] = $userName;
+    $_SESSION['user'] = $user;
     header("Location: userPanel.php");
 }
