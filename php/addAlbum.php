@@ -1,4 +1,11 @@
 <?php
+session_start();
+if (!isset($_SESSION['user'])) {
+    header("Location: ../loginForm.php");
+    exit;
+} else {
+    $user = $_SESSION['user'];
+}
 
 function uploadImgFile($fileInputValue, $maxSizeInKB)
 {

@@ -6,7 +6,7 @@ if (!isset($_SESSION['user'])) {
 } else {
     $user = $_SESSION['user'];
 }
-
+unset($_POST['albumName']);
 ?>
 
 <?php
@@ -14,12 +14,11 @@ require_once 'php/dbFunction.php';
 require_once("php/header.php");
 ?>
 
-
-<form method="post">
-	<label for="album-name">Enter album's name:</label><br />
-	<input type="text" id="album-name" name="albumName"/><br />
-	<input type="submit" value="Create New Album"/>
-</form>
+<div id="manage-albums">
+<?php
+require_once 'addAlbumForm.php';
+?>
+</div>
 
 <?php
 if(isset($_POST['albumName']) && $_POST['albumName'] != ''){
