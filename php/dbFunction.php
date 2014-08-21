@@ -1,13 +1,12 @@
 <?php
-$hostDatabase = 'localhost';
-$mysqlUser = 'root';
-$mysqlPassword = '';
+define( 'HOST_DATABASE', 'localhost');
+define( 'MYSQL_USER', 'root');
+define( 'MYSQL_PASSWORD', '');
 
 //connect with database
 function connectDatabase()
 {
-    global $hostDatabase, $mysqlUser, $mysqlPassword;
-    $link = mysql_connect($hostDatabase, $mysqlUser, $mysqlPassword);
+    $link = mysql_connect(HOST_DATABASE, MYSQL_USER, MYSQL_PASSWORD);
     if (!$link) {
         die('Could not connect: ' . mysql_error());
     } else {

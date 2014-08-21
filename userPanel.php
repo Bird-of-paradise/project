@@ -1,7 +1,8 @@
 <?php
 session_start();
-if(!isset($_SESSION['user'])){
+if (!isset($_SESSION['user'])) {
     header("Location: loginForm.php");
+    exit;
 } else {
     $user = $_SESSION['user'];
 }
@@ -33,6 +34,7 @@ if(isset($_POST['albumName']) && $_POST['albumName'] != ''){
     if($result){
         echo 'The ', htmlentities($albumName), ' is added successfully!';
     }
+>>>>>>> .r17
 }
 ?>
 
