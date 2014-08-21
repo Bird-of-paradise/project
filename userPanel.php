@@ -10,10 +10,7 @@ if (!isset($_SESSION['user'])) {
 ?>
 
 <?php
-include 'php/dbFunction.php';
-
-//print_r($_FILES);
-
+require_once 'php/dbFunction.php';
 require_once("php/header.php");
 ?>
 
@@ -26,15 +23,7 @@ require_once("php/header.php");
 
 <?php
 if(isset($_POST['albumName']) && $_POST['albumName'] != ''){
-
-    $albumName = $_POST['albumName'];
-
-    $result = addAlbum($albumName, $user['id'], '');
-
-    if($result){
-        echo 'The ', htmlentities($albumName), ' is added successfully!';
-    }
->>>>>>> .r17
+    require_once 'php/addAlbum.php';
 }
 ?>
 

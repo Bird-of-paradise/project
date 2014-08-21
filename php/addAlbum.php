@@ -1,12 +1,4 @@
 <?php
-session_start();
-if(!isset($_SESSION['user'])){
-    header("Location: ../loginForm.php");
-    exit;
-} else {
-    $user = $_SESSION['user'];
-}
-header('Content-Type: text/html; charset=utf-8');
 
 function uploadImgFile($fileInputValue, $maxSizeInKB)
 {
@@ -53,7 +45,7 @@ function uploadImgFile($fileInputValue, $maxSizeInKB)
 
 include_once 'dbFunction.php';
 
-if (isset($_POST['albumName'])) {
+if (isset($_POST['albumName']) && $_POST['albumName'] != '') {
 
     $albumName = $_POST['albumName'];
 
