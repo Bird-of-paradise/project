@@ -95,4 +95,23 @@ function addAlbum($albumName, $userId, $imgFileName)
     }
 }
 
+//get album information
+function getAlbumsFromUser($user) {
+	$link = connectDatabase();
+	selectDatabase($link, 'album');
+	$sql = "select name from albums where id_user = {$user['id']};";
+	$result = setQuery($link, $sql);
+	$rows = array();
+	while($currRow = mysql_fetch_array($result, MYSQL_BOTH)) {
+		array_push($rows,$currRow['name']);
+	}
+    mysql_free_result($result);
+    mysql_close($link);
+    
+    if($rows) {
+    	return $rows;
+    } else {
+    	return false;
+    }
+}
 
