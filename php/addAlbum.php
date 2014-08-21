@@ -52,7 +52,7 @@ function uploadImgFile($fileInputValue, $maxSizeInKB)
 
 include_once 'dbFunction.php';
 
-if (isset($_POST['albumName']) && $_POST['albumName'] != '') {
+if (isset($_POST['albumName']) && $_POST['albumName'] != '' && $_FILES['img']['name']) {
 
     $albumName = $_POST['albumName'];
 

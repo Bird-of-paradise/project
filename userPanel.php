@@ -21,7 +21,7 @@ require_once 'addAlbumForm.php';
 </div>
 
 <?php
-if(isset($_POST['albumName']) && $_POST['albumName'] != ''){
+if(isset($_POST['albumName']) && $_POST['albumName'] != '' && $_FILES['img']['name']){
     require_once 'php/addAlbum.php';
 }
 ?>
