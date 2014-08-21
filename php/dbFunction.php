@@ -1,7 +1,7 @@
 <?php
-define( 'HOST_DATABASE', 'localhost');
-define( 'MYSQL_USER', 'root');
-define( 'MYSQL_PASSWORD', '');
+define('HOST_DATABASE', 'localhost');
+define('MYSQL_USER', 'root');
+define('MYSQL_PASSWORD', '');
 
 //connect with database
 function connectDatabase()
@@ -26,7 +26,7 @@ function selectDatabase($link, $database)
 //SQL query
 function setQuery($link, $sql)
 {
- //   $sql = "select * from users where name='$userName'";
+    //   $sql = "select * from users where name='$userName'";
     $result = mysql_query($sql, $link);
 
     if (!$result) {
@@ -49,7 +49,7 @@ function getUser($userName)
     mysql_free_result($result);
     mysql_close($link);
 
-    if($row){
+    if ($row) {
         return $row;
     } else {
         return false;
@@ -61,7 +61,7 @@ function addUser($user)
 {
     $link = connectDatabase();
     selectDatabase($link, 'album');
-    $sql = "INSERT INTO users (name, password, email) ".
+    $sql = "INSERT INTO users (name, password, email) " .
         "VALUES ('{$user['userName']}', '{$user['userPassword1']}', '{$user['email']}');";
     $result = setQuery($link, $sql);
     mysql_close($link);
@@ -80,7 +80,7 @@ function addAlbum($albumName, $userId, $imgFileName)
 {
     $link = connectDatabase();
     selectDatabase($link, 'album');
-    $sql = "INSERT INTO albums (name, img_file, id_user) ".
+    $sql = "INSERT INTO albums (name, img_file, id_user) " .
         "VALUES ('$albumName', '$imgFileName', '$userId');";
     $result = setQuery($link, $sql);
     mysql_close($link);
@@ -94,23 +94,44 @@ function addAlbum($albumName, $userId, $imgFileName)
     }
 }
 
+//Add song in database album
+function addSong($song, $idUser, $idAlbum)
+{
+    $link = connectDatabase();
+    selectDatabase($link, 'album');
+    $sql = "INSERT INTO songs (name, genre, artist, file_name, id_album, id_user, text" .
+           "VALUES ('{$song['name']}', '{$song['genre']}', '{$song['artist']}', {$song['file_name']}',".
+            " '{$idAlbum}', '{$idUser}', '{$song['text']}');";
+    $result = setQuery($link, $sql);
+    mysql_close($link);
+
+    if (!$result) {
+        echo "DB Error, could not query the database\n";
+        echo 'MySQL Error: ' . mysql_error();
+        exit;
+    } else {
+        return $result;
+    }
+}
+
 //get album information
-function getAlbumsFromUser($user) {
-	$link = connectDatabase();
-	selectDatabase($link, 'album');
-	$sql = "select name from albums where id_user = {$user['id']};";
-	$result = setQuery($link, $sql);
-	$rows = array();
-	while($currRow = mysql_fetch_array($result, MYSQL_BOTH)) {
-		array_push($rows,$currRow['name']);
-	}
+function getAlbumsFromUser($user)
+{
+    $link = connectDatabase();
+    selectDatabase($link, 'album');
+    $sql = "select name from albums where id_user = {$user['id']};";
+    $result = setQuery($link, $sql);
+    $rows = array();
+    while ($currRow = mysql_fetch_array($result, MYSQL_BOTH)) {
+        array_push($rows, $currRow['name']);
+    }
     mysql_free_result($result);
     mysql_close($link);
-    
-    if($rows) {
-    	return $rows;
+
+    if ($rows) {
+        return $rows;
     } else {
-    	return false;
+        return false;
     }
 }
 
