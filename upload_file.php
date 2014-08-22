@@ -1,4 +1,5 @@
 <?php
+/*
 if(isset($_FILES['file'])) {
     $name = $_FILES['file']['name'];
     $size = $_FILES['file']['size'];
@@ -30,3 +31,4 @@ if(isset($_FILES['file'])) {
 
 </body>
 </html>
+*/
