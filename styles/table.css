@@ -1,0 +1,16 @@
+table{
+    margin: 0 50px 50px;
+}
+table, th, td{
+    border: 1px solid black;
+
+}
+th, td{
+    width: 200px;
+}
+th{
+    background-color: #B9722E;
+}
+table tr:nth-child(odd){
+    background-color: #20B4D8;
+}
