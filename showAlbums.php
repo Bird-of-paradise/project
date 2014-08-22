@@ -1,5 +1,5 @@
 <?php
-define('DB_NAME', 'myfirstdb');
+define('DB_NAME', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASSWORD', '');
 define('DB_HOST', 'Localhost');
@@ -18,19 +18,10 @@ if (!$db_selected) {
 
 $link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 
-$data = mysql_query("SELECT * FROM Albums") or die(mysql_error());
+$data = mysql_query("SELECT * FROM albums") or die(mysql_error());
 $info = mysql_fetch_array( $data );
 
-
-
-
-
 ?>
-
-
-
-
-
 
 <?php require_once("php/testHeader.php");?>
 <link rel="stylesheet" href="styles/table.css"/>
@@ -43,12 +34,10 @@ $info = mysql_fetch_array( $data );
     </thead>
     <?php
     while($info = mysql_fetch_array( $data )) {
-    Print "<tr><td>".$info['Album name'] . "</td>" . "<td>".$info['Album artist'] . "</td>" . "<td>".$info['Genre'] . "</td></tr>";
+    Print "<tr><td>".$info['name'] . "</td>"; //. "<td>".$info['artist'] . "</td>" . "<td>".$info['gener'] . "</td></tr>";
     }
     ?>
 </table>
 
 
 <?php require_once("php/footer.php");?>
-</body>
-</html>

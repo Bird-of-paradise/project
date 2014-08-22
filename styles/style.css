@@ -79,4 +79,8 @@ header>nav li a {
 .indexLogo>img{
     width: 550px;
 }
+.viewAlbums{
+    text-align: right;
+    margin: 20px;
+}
 
