@@ -26,6 +26,19 @@ if(isset($_POST['albumName']) && $_POST['albumName'] != '' && $_FILES['img']['na
 }
 ?>
 
+<div id="manage-albums">
+        <?php
+        require_once 'addSongForm.php';
+        ?>
+</div>
+
+
+<?php
+if(isset($_POST['name']) && $_POST['artist'] != '' && $_FILES['song']['name']){
+    require_once 'php/addSong.php';
+}
+?>
+
 <?php
 $albumsFromUser = getAlbumsFromUser($user);
 foreach ($albumsFromUser as $album) : 
