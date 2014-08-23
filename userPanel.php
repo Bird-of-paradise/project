@@ -9,6 +9,8 @@ require_once("views/testHeader.php");
         <a href="userPanel.php?action_user=1">Add album</a>
         <a href="userPanel.php?action_user=2">Open album</a>
         <a href="#">Edit albums</a>
+        <!--I added this button just for debugging-->
+        <a href="userPanel.php?action_user=3">ADD SONG</a> 
         <a href="userPanel.php?action_user=def">View albums</a>
         <a href="userPanel.php?action_user=log out">Log out</a>
     </div>

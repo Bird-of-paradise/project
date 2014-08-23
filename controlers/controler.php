@@ -51,6 +51,16 @@ if (isset($_REQUEST['action_guest'])) {
             $model = 'models/openAlbum.php';
             $view = 'views/showSongs.php';
             break;
+			
+		case '3':
+			$model = null;
+			$view = 'views/addSongForm.php';
+			break;
+			
+		case 'Add Song':
+			$model = 'models/addSong.php';
+			$view = 'views/showSongs.php';
+			break;
 
         case 'log out':
             unset($_SESSION['user']);
