@@ -24,7 +24,7 @@ function uploadImgFile($fileInputValue, $maxSizeInKB)
         if ($_FILES[$fileInputValue]["error"] > 0) {
             echo "Error: " . $_FILES[$fileInputValue]["error"] . "<br>";
         } else {
-            $targetPath = realpath("../image/");
+            $targetPath = realpath("images/");
             $targetPath = $targetPath . DIRECTORY_SEPARATOR . basename($_FILES['img']['name']);
             if (!move_uploaded_file($_FILES['img']['tmp_name'], $targetPath)) {
                 echo "There was an error uploading the file, please try again!";
