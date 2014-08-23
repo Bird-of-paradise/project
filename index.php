@@ -1,15 +1,24 @@
-
-<?php require_once("php/testHeader.php");?>
+<?php
+session_start();
+require_once("views/testHeader.php");
+?>
 
 <div class="main">
-    <div class="viewAlbums"><a href="showAlbums.php">View Albums</a></div>
+
     <div class="indexLogo">
-        <img src="image/Logo.png" alt="Logo"/>
+        <img src="images/Logo.png" alt="Logo"/>
         <div class="login">
-            <?php require_once("loginForm.php");?>
+            <?php
+                if(isset($_GET['registration'])){
+                    require_once("views/registrationForm.php");
+                } else {
+                    require_once("views/loginForm.php");
+                }?>
         </div>
     </div>
 
 </div>
 
-<?php require_once("php/footer.php");?>
+<?php
+require_once("views/footer.php");
+?>

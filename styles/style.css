@@ -84,3 +84,22 @@ header>nav li a {
     margin: 20px;
 }
 
+/*Login and Registration Form Styles*/
+form {
+    width: 20%;
+    margin: 25px auto;
+}
+
+form input {
+    width: 100%;
+    display: block;
+    margin: 10px auto;
+}
+
+.error {
+    color: red;
+    width: 20%;
+    margin: 25px auto;
+    text-align: center;
+}
+

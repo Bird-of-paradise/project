@@ -95,13 +95,15 @@ function addAlbum($albumName, $userId, $imgFileName)
 }
 
 //Add song in database album
-function addSong($song, $idUser, $idAlbum)
+function addSong($song, $idUser, $idAlbum, $fileName)
 {
+    $text = mysql_real_escape_string($song['text']);
+
     $link = connectDatabase();
     selectDatabase($link, 'album');
-    $sql = "INSERT INTO songs (name, genre, artist, file_name, id_album, id_user, text" .
-           "VALUES ('{$song['name']}', '{$song['genre']}', '{$song['artist']}', {$song['file_name']}',".
-            " '{$idAlbum}', '{$idUser}', '{$song['text']}');";
+    $sql = "INSERT INTO songs (name, genre, artist, file_name, id_album, id_user, text) " .
+           "VALUES ('{$song['name']}', '{$song['genre']}', '{$song['artist']}', '{$fileName}',".
+            " '{$idAlbum}', '{$idUser}', '{$text}');";
     $result = setQuery($link, $sql);
     mysql_close($link);
 
