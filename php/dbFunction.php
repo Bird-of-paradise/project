@@ -159,3 +159,58 @@ function getSongs($albumID)
     }
 }
 
+//edit album
+function editAlbum($id, $newImgName, $newName) {
+	$link = connectDatabase();
+	selectDatabase($link, 'album');
+	
+	$sql = "update albums set "; 
+	if($newImgName !== null && $newName !== null) {
+		$sql .= "img_file='${newImgName}', name='${newName}' ";
+	} else {	
+		if($newImgName !== null) {
+			$sql .= "img_file='${newImgName}' ";
+		} else if($newName !== null) {
+			$sql .= "name='${newName}' ";
+		}
+	}
+	$sql .= "where id=${id}";
+	
+	setQuery($link, $sql);
+    mysql_close($link);
+}
+
+//artist, file_name, genre, id_album, id_user, name, text
+//edit song
+function editSong($id, $newArtist, $newFileName, $newGenre, $newName, $newText) {
+	$link = connectDatabase();
+	selectDatabase($link, 'album');
+	
+	$count = 0;
+	$sql = "update songs set ";
+	if($newArtist !== null) {
+		$sql .= "artist='${newArtist}', ";
+		$count++;
+	}
+	if($newFileName !== null) {
+		$sql .= "file_name='${newFileName}', ";
+		$count++;
+	}
+	if($newGenre !== null) {
+		$sql .= "genre='${newGenre}', ";
+		$count++;
+	}
+	if($newName !== null) {
+		$sql .= "name='${newName}', ";
+		$count++;
+	}
+	if($newText !== null) {
+		$sql .= "text='${newText}' ";
+		$count++;
+	}
+	if($count === 1) $sql = str_replace(", ", " ", $sql);
+	$sql .= "where id=${id}";
+	
+	setQuery($link, $sql);
+	mysql_close($link);
+}

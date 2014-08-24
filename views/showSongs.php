@@ -1,4 +1,4 @@
-<?php require_once 'models/OpenAlbum.php';
+<?php require_once 'models/openAlbum.php';
 ?>
 
 <table border="1">
