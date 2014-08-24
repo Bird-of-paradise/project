@@ -18,8 +18,7 @@ function uploadSongFile($fileInputValue, $maxSizeInKB)
         return false;
     }
 
-    if (($_FILES[$fileInputValue]["type"] == "image/gif")
-            || ($_FILES["file"]["type"] == "audio/mp3")
+    if (($_FILES["file"]["type"] == "audio/mp3")
             || ($_FILES["file"]["type"] == "audio/mp4")
             || ($_FILES["file"]["type"] == "audio/wav")
             && ($_FILES[$fileInputValue]["size"] < $maxSizeInKB * 1000)
@@ -55,7 +54,7 @@ if (isset($_POST['name']) && $_POST['name'] != '' && $_FILES['song']['name']) {
 
     $songName = $_POST['name'];
 
-    $result = addSong($songName, $user['id'], 1); // Как да намеря ид-то на албума Не ми е ясно!
+    $result = addSong($_POST, 1, 1,$_FILES['song']['name']); // Как да намеря ид-то на албума Не ми е ясно!
 
 
     uploadSongFile('song', 70000);
