@@ -14,3 +14,21 @@ th{
 table tr:nth-child(odd){
     background-color: #20B4D8;
 }
+td img{
+    width: 200px;
+}
+
+.albums img{
+    width: 200px;
+}
+.albums{
+    display: inline-block;
+    margin: 20px;
+    border: 1px solid black;
+    
+}
+.albums h3{
+   text-align: center;
+    background: #20B4D8;
+    margin: 0;
+}
