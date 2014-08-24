@@ -137,3 +137,25 @@ function getAlbumsFromUser($user)
     }
 }
 
+//get songs information by album_id
+function getSongs($albumID)
+{
+    $link = connectDatabase();
+    selectDatabase($link, 'album');
+    $sql = "select * from songs where id_album = $albumID;";
+    $result = setQuery($link, $sql);
+    $rows = array();
+    $totalRows = mysql_num_rows($result);
+
+    //start the loop
+    for ( $i = 0; $i < $totalRows; ++$i ) {
+        $rows[$i] = mysql_fetch_array($result);
+    }
+
+    if ($rows) {
+        return $rows;
+    } else {
+        return false;
+    }
+}
+
