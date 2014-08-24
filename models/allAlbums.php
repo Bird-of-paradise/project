@@ -16,7 +16,7 @@ if (!$db_selected) {
 $link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 $data = mysql_query("SELECT * FROM albums") or die(mysql_error());
 $albums = mysql_fetch_array($data);
-var_dump($albums)
+
 
 
 ?>
