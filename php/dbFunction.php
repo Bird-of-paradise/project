@@ -214,3 +214,10 @@ function editSong($id, $newArtist, $newFileName, $newGenre, $newName, $newText) 
 	setQuery($link, $sql);
 	mysql_close($link);
 }
+
+function allAlbums(){
+    $link = connectDatabase();
+    selectDatabase($link, 'album');
+    $data = mysql_query("SELECT * FROM album") or die(mysql_error());
+    $albums = mysql_fetch_array($data);
+}
