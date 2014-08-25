@@ -43,6 +43,7 @@ if (isset($_REQUEST['action_guest'])) {
         //Add Album
         case 'Add Album':
             $model = 'models/addAlbum.php';
+            $model2 = DEFAULT_MODEL;
             $view = DEFAULT_VIEW;
             break;
 
@@ -60,8 +61,9 @@ if (isset($_REQUEST['action_guest'])) {
 			
 		case 'Add Song':
 			$model = 'models/addSong.php';
-            header('Location: userPanel.php?action_user=2');
-			break;
+            $model2 = 'models/openAlbum.php';
+            $view = 'views/showSongs.php';
+            break;
 
         case 'log out':
             unset($_SESSION['user']);
@@ -95,12 +97,15 @@ if (!isset($_SESSION['user'])) {
 $_SESSION['current_model'] = $model;
 $_SESSION['current_view'] = $view;
 
+
 //execute current model
 if(isset($model)){
     require_once $model;
 }
 
-
+if(isset($model2)){
+    require_once $model2;
+}
 
 
 

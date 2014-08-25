@@ -6,9 +6,10 @@ function uploadSongFile($fileInputValue, $maxSizeInKB)
         return false;
     }
 
-    if (($_FILES["$fileInputValue"]["type"] == "audio/mp3")
-            || ($_FILES["$fileInputValue"]["type"] == "audio/mp4")
-            || ($_FILES["$fileInputValue"]["type"] == "audio/wav")
+    if (($_FILES[$fileInputValue]["type"] == "audio/mp3")
+            || ($_FILES[$fileInputValue]["type"] == "audio/mp4")
+            || ($_FILES[$fileInputValue]["type"] == "audio/mpeg")
+            || ($_FILES[$fileInputValue]["type"] == "audio/wav")
             && ($_FILES[$fileInputValue]["size"] < $maxSizeInKB * 1000)
     ) {
 
@@ -16,11 +17,11 @@ function uploadSongFile($fileInputValue, $maxSizeInKB)
             echo "Error: " . $_FILES[$fileInputValue]["error"] . "<br>";
         } else {
 
-            $targetPath = realpath("../music/");
+            $targetPath = realpath("music/");
 
-            $targetPath = $targetPath . DIRECTORY_SEPARATOR . basename($_FILES['$fileInputValue']['name']);
+            $targetPath = $targetPath . DIRECTORY_SEPARATOR . basename($_FILES[$fileInputValue]['name']);
 
-            if (!move_uploaded_file($_FILES['$fileInputValue']['tmp_name'], $targetPath)) {
+            if (!move_uploaded_file($_FILES[$fileInputValue]['tmp_name'], $targetPath)) {
 
                 echo "There was an error uploading the file, please try again!";
                 return false;
@@ -42,12 +43,16 @@ if (isset($_POST['name']) && $_POST['name'] != '' && $_FILES['song']['name']) {
 
     $songName = $_POST['name'];
 
-    $result = addSong($_POST, 1, 1,$_FILES['song']['name']); // Как да намеря ид-то на албума Не ми е ясно!
 
+    $isUpload = uploadSongFile('song', 70000);
 
-    uploadSongFile('song', 70000);
+    if($isUpload){
+        $result = addSong($_POST, $user['id'], $_SESSION['id_open_album'],$_FILES['song']['name']); // Как да намеря ид-то на албума Не ми е ясно!
+    } else {
+        $result = false;
+    }
 
-    if ($result) {
+     if ($result) {
         echo 'The ', $songName, ' is added successfully!';
     }
 }
