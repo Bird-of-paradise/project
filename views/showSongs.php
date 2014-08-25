@@ -1,12 +1,9 @@
-<?php require_once 'models/openAlbum.php';
-?>
-
 <table border="1">
 <?php for ($i = 0; $i < count($rows); $i++) :
 ?>
 <tr>
     <td><span id="dummy"></span>
-        <a href="#" ><img src="images/play_button.jpg" width="10" height="20" border="0"onclick="playSound('<?php echo($rows[$i]['file_name'])?>');" /></a>
+        <a href="#" ><img src="images/play_button.jpg" width="10" height="20" border="0" onclick="playSound('<?php echo($rows[$i]['file_name'])?>');" /></a>
     </td>
     <td><?= $rows[$i]['id']?></td>
     <td><?= $rows[$i]['name']?></td>

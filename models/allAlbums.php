@@ -17,9 +17,7 @@
 //$data = mysql_query("SELECT * FROM albums") or die(mysql_error());
 //$albums = mysql_fetch_array($data);
 include_once 'php/dbFunction.php';
-$albums = allAlbums();
+$albums = getAllAlbums();
 
 
 
-?>
-?>

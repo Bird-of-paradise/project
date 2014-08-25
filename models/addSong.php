@@ -1,16 +1,4 @@
 <?php
-//include_once 'dbFunction.php';
-//addSong($_POST, 1, 1);
-//echo 'Add song';
-
-session_start();
-if (!isset($_SESSION['user'])) {
-    header("Location: ../loginForm.php");
-    exit;
-} else {
-    $user = $_SESSION['user'];
-}
-
 
 function uploadSongFile($fileInputValue, $maxSizeInKB)
 {
@@ -18,9 +6,9 @@ function uploadSongFile($fileInputValue, $maxSizeInKB)
         return false;
     }
 
-    if (($_FILES["file"]["type"] == "audio/mp3")
-            || ($_FILES["file"]["type"] == "audio/mp4")
-            || ($_FILES["file"]["type"] == "audio/wav")
+    if (($_FILES["$fileInputValue"]["type"] == "audio/mp3")
+            || ($_FILES["$fileInputValue"]["type"] == "audio/mp4")
+            || ($_FILES["$fileInputValue"]["type"] == "audio/wav")
             && ($_FILES[$fileInputValue]["size"] < $maxSizeInKB * 1000)
     ) {
 
@@ -30,9 +18,9 @@ function uploadSongFile($fileInputValue, $maxSizeInKB)
 
             $targetPath = realpath("../music/");
 
-            $targetPath = $targetPath . DIRECTORY_SEPARATOR . basename($_FILES['song']['name']);
+            $targetPath = $targetPath . DIRECTORY_SEPARATOR . basename($_FILES['$fileInputValue']['name']);
 
-            if (!move_uploaded_file($_FILES['song']['tmp_name'], $targetPath)) {
+            if (!move_uploaded_file($_FILES['$fileInputValue']['tmp_name'], $targetPath)) {
 
                 echo "There was an error uploading the file, please try again!";
                 return false;

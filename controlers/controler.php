@@ -51,7 +51,8 @@ if (isset($_REQUEST['action_guest'])) {
             $model = 'models/openAlbum.php';
             $view = 'views/showSongs.php';
             break;
-			
+
+		//Show Add Song Form
 		case '3':
 			$model = null;
 			$view = 'views/addSongForm.php';
@@ -59,7 +60,7 @@ if (isset($_REQUEST['action_guest'])) {
 			
 		case 'Add Song':
 			$model = 'models/addSong.php';
-			$view = 'views/showSongs.php';
+            header('Location: userPanel.php?action_user=2');
 			break;
 
         case 'log out':

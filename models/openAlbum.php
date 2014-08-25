@@ -5,8 +5,9 @@ require_once 'php/dbFunction.php';
 
 // I need to know albumID!!!!!
 
-
-$rows = getSongs(1);
+$idOpenAlbum = $_GET['id_album'];
+$_SESSION['id_open_album'] = $idOpenAlbum;
+$rows = getSongs($idOpenAlbum);
 
 if ($rows) { // TEST ALBUM_ID = 1 if you make test INSERT into table songs records where album id = 1
     return $rows;
