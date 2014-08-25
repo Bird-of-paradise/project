@@ -102,4 +102,24 @@ form input {
     margin: 25px auto;
     text-align: center;
 }
+/* Show All Albums*/
+.albums{
+    display: inline-block;
+    margin: 30px;
+    text-align: center;
+    width: 350px;
+
+}
+.albums img{
+    width: 100%;
+
+}
+.albums a {
+    text-decoration: none;
+    color: black;
+}
+.albums h3{
+    background-color: #51B2D8;
+}
+/*=============================*/
 
