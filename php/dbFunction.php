@@ -159,6 +159,24 @@ function getSongs($albumID)
     }
 }
 
+//get album
+function getAlbum($id) {
+	$link = connectDatabase();
+	selectDatabase($link, 'album');
+	
+	$sql = "select * from albums where id=${id}";
+	$result = setQuery($link, $sql);
+    $row = mysql_fetch_assoc($result);
+    mysql_free_result($result);
+    mysql_close($link);
+
+    if ($row) {
+        return $row;
+    } else {
+        return false;
+    }
+}
+
 //edit album
 function editAlbum($id, $newImgName, $newName) {
 	$link = connectDatabase();
@@ -170,6 +188,8 @@ function editAlbum($id, $newImgName, $newName) {
 	} else {	
 		if($newImgName !== null) {
 			$sql .= "img_file='${newImgName}' ";
+			$currentAlbum = getAlbum($id);
+			unlink($currentAlbum["img_file"]);
 		} else if($newName !== null) {
 			$sql .= "name='${newName}' ";
 		}

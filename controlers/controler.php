@@ -64,6 +64,16 @@ if (isset($_REQUEST['action_guest'])) {
             $model2 = 'models/openAlbum.php';
             $view = 'views/showSongs.php';
             break;
+			
+		case '4':
+			$model = null;
+			$view = 'views/editAlbumForm.php';
+			break;
+			
+		case 'Edit Album':
+			$model = 'models/editAlbum.php';
+			$view = DEFAULT_VIEW;
+			break;
 
         case 'log out':
             unset($_SESSION['user']);
