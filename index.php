@@ -1,8 +1,7 @@
 <?php
 session_start();
-require_once("views/testHeader.php");
 ?>
-
+<link rel="stylesheet" href="styles/style.css"/>
 <div class="main">
 
     <div class="indexLogo">
@@ -18,7 +17,3 @@ require_once("views/testHeader.php");
     </div>
 
 </div>
-
-<?php
-require_once("views/footer.php");
-?>

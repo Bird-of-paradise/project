@@ -2,24 +2,25 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../styles/style.css"/>
+    <link rel="stylesheet" href="styles/style.css"/>
     <title>Welcome</title>
 </head>
 <body>
 <header>
     <div class="logo">
-        <img src="image/bird_blue_cute.png" alt="Logo" width="100px"/>
+        <a href="#"><img src="images/bird_blue_cute.png" alt="Logo" width="100px"/></a>
     </div>
     <div class="welcome">
         <h1><a href="#">Bird`s Song</a></h1>
     </div>
     <nav>
         <ul>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Catalog</a></li>
-            <li><a href="#">Users</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="userPanel.php?action_user=1">Add album</a></li>
+            <li><a href="userPanel.php?action_user=2">Open album</a></li>
+            <li><a href="#">Edit albums</a></li>
+            <li><a href="userPanel.php?action_user=3">ADD SONG</a> </li>
+            <li><a href="userPanel.php?action_user=def">View albums</a></li>
+            <li><a href="userPanel.php?action_user=log out">Log out</a></li>
         </ul>
     </nav>
     <div class="user"></div>
