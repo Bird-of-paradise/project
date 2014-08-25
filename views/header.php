@@ -17,7 +17,7 @@
         <ul>
             <li><a href="userPanel.php?action_user=1">Add album</a></li>
             <li><a href="userPanel.php?action_user=2">Open album</a></li>
-            <li><a href="#">Edit albums</a></li>
+            <li><a href="userPanel.php?action_user=4">Edit albums</a></li>
             <li><a href="userPanel.php?action_user=3">ADD SONG</a> </li>
             <li><a href="userPanel.php?action_user=def">View albums</a></li>
             <li><a href="userPanel.php?action_user=log out">Log out</a></li>
