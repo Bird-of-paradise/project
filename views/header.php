@@ -8,10 +8,10 @@
 <body>
 <header>
     <div class="logo">
-        <a href="#"><img src="images/bird_blue_cute.png" alt="Logo" width="100px"/></a>
+        <a href="userPanel.php"><img src="images/bird_blue_cute.png" alt="Logo" width="100px"/></a>
     </div>
     <div class="welcome">
-        <h1><a href="#">Bird`s Song</a></h1>
+        <h1><a href="userPanel.php">Bird`s Song</a></h1>
     </div>
     <nav>
         <ul>

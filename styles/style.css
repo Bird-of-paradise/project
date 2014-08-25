@@ -27,6 +27,7 @@ body{
 header {
     width: 100%;
     height: 100px;
+    margin-bottom: 70px;
 }
 .welcome>h1{
     font-size: 3em;
@@ -105,11 +106,14 @@ form input {
     text-align: center;
 }
 /* Show All Albums*/
+footer{
+    vertical-align: bottom;
+}
 .albums{
     display: inline-block;
     border: 1px solid black;
-    margin: 30px;
-    margin-top: 70px;
+    margin: 25px;
+    /*margin-top: 70px;*/
     text-align: center;
     width: 350px;
 
@@ -125,5 +129,34 @@ form input {
 .albums h3{
     background-color: #51B2D8;
 }
-/*=============================*/
+
+/*Footer*/
+footer{
+    vertical-align: bottom;
+}
+.about{
+    text-align: center;
+}
+.about span{
+display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-top: -40px;
+}
+.about li {
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 3px;
+    background-color: #628EB5;
+    font-size: 1.2em;
+
+}
+.about li img{
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+}
 
