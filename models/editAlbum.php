@@ -13,15 +13,13 @@ if(uploadImgFile('img', 200)) {
 	$newFileName = 'images/' . $_FILES['img']['name'];
 } else {
 	if($newAlbumName === null) {
-		$_SESSION['errorMessages'] = $errorMessages;
-		$errorMessages = "You must change at least one of the values!";
+		$_SESSION['errorMessages'] = "You must change at least one of the values!";
 		header("Location: index.php?action_user=4");
-    	//exit;
+    	exit;
 	}
 	$newFileName = null;
 }
 
 
-//TODO: id's must change dynamically
-editAlbum(21, $newFileName, $newAlbumName);
+editAlbum($_SESSION["id_open_album"], $newFileName, $newAlbumName);
 ?>

@@ -37,4 +37,40 @@ function uploadImgFile($fileInputValue, $maxSizeInKB)
 
     return true;
 }
+
+function uploadSongFile($fileInputValue, $maxSizeInKB)
+{
+    if ($_FILES[$fileInputValue]["error"] === 4) {
+        return false;
+    }
+
+    if (($_FILES[$fileInputValue]["type"] == "audio/mp3")
+            || ($_FILES[$fileInputValue]["type"] == "audio/mp4")
+            || ($_FILES[$fileInputValue]["type"] == "audio/mpeg")
+            || ($_FILES[$fileInputValue]["type"] == "audio/wav")
+            && ($_FILES[$fileInputValue]["size"] < $maxSizeInKB * 1000)
+    ) {
+
+        if ($_FILES[$fileInputValue]["error"] > 0) {
+            echo "Error: " . $_FILES[$fileInputValue]["error"] . "<br>";
+        } else {
+
+            $targetPath = realpath("music/");
+
+            $targetPath = $targetPath . DIRECTORY_SEPARATOR . basename($_FILES[$fileInputValue]['name']);
+
+            if (!move_uploaded_file($_FILES[$fileInputValue]['tmp_name'], $targetPath)) {
+
+                echo "There was an error uploading the file, please try again!";
+                return false;
+            }
+        }
+
+    } else {
+        echo "Invalid file format or size is bigger of $maxSizeInKB K";
+        return false;
+    }
+
+    return true;
+}
 ?>
