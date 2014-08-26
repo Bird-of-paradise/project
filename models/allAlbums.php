@@ -16,8 +16,16 @@
 //$link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 //$data = mysql_query("SELECT * FROM albums") or die(mysql_error());
 //$albums = mysql_fetch_array($data);
+
+
 include_once 'php/dbFunction.php';
 $albums = getAllAlbums();
+
+if ($albums) { // TEST ALBUM_ID = 1 if you make test INSERT into table songs records where album id = 1
+    return $albums;
+} else {
+    $_SESSION['errorMessages'] = "There are no albums" ;
+}
 
 
 

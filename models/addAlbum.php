@@ -5,7 +5,7 @@ include_once 'php/functions.php';
 
 include_once 'php/dbFunction.php';
 
-if (isset($_POST['albumName']) && $_POST['albumName'] != '' ) {
+if (isset($_POST['albumName']) && $_POST['albumName'] != '') {
 
     $albumName = $_POST['albumName'];
 
@@ -20,6 +20,12 @@ if (isset($_POST['albumName']) && $_POST['albumName'] != '' ) {
     $result = addAlbum($albumName, $user['id'], $fileName);
 
     if ($result) {
-        echo 'The ', $albumName, ' is added successfully!';
+        echo "<script>alert('The  $albumName  is added successfully!')</script>";
+        header("Location: userPanel.php?action_user=def");
+        exit;
     }
+} else {
+    $_SESSION['errorMessages'] = "Put a album's name!" ;
+    header("Location: userPanel.php?action_user=1");
+    exit;
 }

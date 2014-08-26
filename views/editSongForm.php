@@ -1,3 +1,14 @@
+<nav>
+    <ul>
+        <li><a href="userPanel.php?action_user=4">Edit album</a></li>
+        <li><a href="userPanel.php?action_user=def">View albums</a></li>
+        <li><a href="userPanel.php?action_user=3">Add song</a></li>
+        <li><a href="userPanel.php?action_user=log out">Log out</a></li>
+    </ul>
+</nav>
+<div class="user"></div>
+<hr/>
+</header>
 <?php
 if(isset($_SESSION['errorMessages'])) {
 	?>

@@ -2,6 +2,7 @@
 function uploadImgFile($fileInputValue, $maxSizeInKB)
 {
     if ($_FILES[$fileInputValue]["error"] === 4) {
+        $_SESSION['errorMessages'] = "There was an error uploading the file, please try again!";
         return false;
     }
 
@@ -25,13 +26,13 @@ function uploadImgFile($fileInputValue, $maxSizeInKB)
             $targetPath = realpath("images/");
             $targetPath = $targetPath . DIRECTORY_SEPARATOR . basename($_FILES['img']['name']);
             if (!move_uploaded_file($_FILES['img']['tmp_name'], $targetPath)) {
-                echo "There was an error uploading the file, please try again!";
+                $_SESSION['errorMessages'] = "There was an error uploading the file, please try again!";
                 return false;
             }
         }
     } else {
 
-        echo "Invalid file format or size is bigger of $maxSizeInKB K";
+        $_SESSION['errorMessages'] = "Invalid file format or size is bigger of $maxSizeInKB K";
         return false;
     }
 
@@ -41,6 +42,7 @@ function uploadImgFile($fileInputValue, $maxSizeInKB)
 function uploadSongFile($fileInputValue, $maxSizeInKB)
 {
     if ($_FILES[$fileInputValue]["error"] === 4) {
+        $_SESSION['errorMessages'] = "There was an error uploading the file, please try again!";
         return false;
     }
 
@@ -61,13 +63,13 @@ function uploadSongFile($fileInputValue, $maxSizeInKB)
 
             if (!move_uploaded_file($_FILES[$fileInputValue]['tmp_name'], $targetPath)) {
 
-                echo "There was an error uploading the file, please try again!";
+                $_SESSION['errorMessages'] = "There was an error uploading the file, please try again!";
                 return false;
             }
         }
 
     } else {
-        echo "Invalid file format or size is bigger of $maxSizeInKB K";
+        $_SESSION['errorMessages'] = "Invalid file format or size is bigger of $maxSizeInKB K";
         return false;
     }
 
