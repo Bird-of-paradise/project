@@ -13,6 +13,7 @@
     <?php
     if (isset($_SESSION['errorMessages'])):
         echo $_SESSION['errorMessages'];
+        unset($_SESSION['errorMessages']);
     else :
     ?>
     <ul class="graphic">

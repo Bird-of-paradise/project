@@ -16,5 +16,4 @@ if ($rows) { // TEST ALBUM_ID = 1 if you make test INSERT into table songs recor
     return $rows;
 } else {
     $_SESSION['errorMessages'] = "There are no songs in this album" ;
-    unset($_SESSION['errorMessages']);
 }
