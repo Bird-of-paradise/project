@@ -14,7 +14,7 @@ if(uploadImgFile('img', 200)) {
 } else {
 	if($newAlbumName === null) {
 		$_SESSION['errorMessages'] = "You must change at least one of the values!";
-		header("Location: index.php?action_user=4");
+        echo "<script> window.location.replace('userPanel.php?action_user=4') </script>";
     	exit;
 	}
 	$newFileName = null;

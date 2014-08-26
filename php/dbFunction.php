@@ -98,7 +98,7 @@ function addAlbum($albumName, $userId, $imgFileName)
 //Add song in database album
 function addSong($song, $idUser, $idAlbum, $fileName)
 {
-    //$text = mysql_real_escape_string($song['text']);
+    $text = mysql_real_escape_string($song['text']);
 
     $link = connectDatabase();
     selectDatabase($link, MYSQL_DATABASE);
@@ -214,8 +214,6 @@ function editSong($id, $newArtist, $newFileName, $newGenre, $newName, $newText) 
 		$count++;
 	}
 	if($newFileName !== null) {
-		$currentSong = getSong($id);
-		unlink("music/" . $currentSong['file_name']);
 		$sql .= "file_name='${newFileName}', ";
 		$count++;
 	}
@@ -239,33 +237,14 @@ function editSong($id, $newArtist, $newFileName, $newGenre, $newName, $newText) 
 }
 
 //remove song
-function removeSong($id, $fileName) {
+function removeSong($id) {
 	$link = connectDatabase();
-	selectDatabase($link, MYSQL_DATABASE);
-
-	unlink("music/" . $fileName);
+	selectDatabase($link, 'album');
+	
 	$sql = "delete from songs where id=${id};";
 	
 	setQuery($link, $sql);
 	mysql_close($link);
-}
-
-//remove album
-function removeAlbum($id) {
-	$albumSongs = getSongs($id);
-	foreach($albumSongs as $song) {
-		removeSong($song['id'], $song['file_name']);
-	}
-	
-	$currentAlbum = getAlbum($id);
-	unlink($currentAlbum['img_file']);
-
-	$link = connectDatabase();
-	selectDatabase($link, MYSQL_DATABASE);
-	$sql = "delete from albums where id=${id}";
-	
-	setQuery($link, $sql);
-	mysql_close($link);	
 }
 
 function getAllAlbums(){

@@ -1,6 +1,5 @@
 <nav>
     <ul>
-    	<li><a href="javascript:removeAlbum(<?=$_SESSION['id_open_album']?>)">Remove Album</a></li>
         <li><a href="userPanel.php?action_user=4">Edit album</a></li>
         <li><a href="userPanel.php?action_user=def">View albums</a></li>
         <li><a href="userPanel.php?action_user=3">Add song</a></li>
@@ -9,8 +8,6 @@
 </nav>
 <div class="user"></div>
 <hr/>
-<script type="text/javascript" src="js/ManageSongs.js"></script>
-<script type="text/javascript" src="js/ManageAlbums.js"></script>
 </header>
 <div class="songs-container">
     <?php
@@ -23,11 +20,7 @@
     <ul class="graphic">
         <?php for ($i = 0; $i < count($rows); $i++) :
             ?>
-            <li>
-            	<a href="music/<?php echo($rows[$i]['file_name']) ?>"><?php echo($rows[$i]['name']) ?></a>
-				<button onclick="editSong(<?=$rows[$i]['id']?>)">Edit</button> / 
-				<button onclick="removeSong(<?=$rows[$i]['id']?>, '<?=$rows[$i]['name']?>', '<?=$rows[$i]['file_name']?>')">Remove</button>
-            </li>
+            <li><a href="music\<?php echo($rows[$i]['file_name']) ?>"><?php echo($rows[$i]['name']) ?></a></li>
         <?php
         endfor;
         endif

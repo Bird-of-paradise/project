@@ -20,12 +20,12 @@ if (isset($_POST['albumName']) && $_POST['albumName'] != '') {
     $result = addAlbum($albumName, $user['id'], $fileName);
 
     if ($result) {
-        echo "<script>alert('The  $albumName  is added successfully!')</script>";
-        header("Location: userPanel.php?action_user=def");
+        $_SESSION['alert'] =  "<script>alert('The  $albumName  is added successfully!')</script>";
+         echo "<script> window.location.replace('userPanel.php?action_user=def') </script>";
         exit;
     }
 } else {
     $_SESSION['errorMessages'] = "Put a album's name!" ;
-    header("Location: userPanel.php?action_user=1");
+    echo "<script> window.location.replace('userPanel.php?action_user=1') </script>";
     exit;
 }

@@ -17,12 +17,12 @@ if (isset($_POST['name']) && $_POST['name'] != '' && $_FILES['song']['name']) {
     }
 
      if ($result) {
-        echo 'The ', $songName, ' is added successfully!';
+         $_SESSION['alert'] =  "<script>alert('The  $songName  is added successfully!')</script>";
     }
 }  else {
     if(!isset($_SESSION['errorMessages'])){
         $_SESSION['errorMessages'] = "Put a song's name!" ;
     }
-    header("Location: userPanel.php?action_user=3");
+    echo "<script> window.location.replace('userPanel.php?action_user=3') </script>";
     exit;
 }

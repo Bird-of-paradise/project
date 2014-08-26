@@ -33,9 +33,10 @@ if(isset($_POST['newText'])) {
 
 if($count === 0) {
 	$_SESSION['errorMessages'] = 'You must change at least one of the values!';
-	header("Location: index.php?action_user=5");
+    echo "<script> window.location.replace('userPanel.php?action_user=5') </script>";
 	exit;
 }
 
+//and now here comes the big question about getting the song's id :D
 editSong($_SESSION['id_open_song'], $newArtist, $newFileName, $newGenre, $newName, $newText);
 ?>

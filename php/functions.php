@@ -2,8 +2,7 @@
 function uploadImgFile($fileInputValue, $maxSizeInKB)
 {
     if ($_FILES[$fileInputValue]["error"] === 4) {
-        $_SESSION['errorMessages'] = "There was an error uploading the file, please try again!";
-        return false;
+         return false;
     }
 
     $allowedExts = array("gif", "jpeg", "jpg", "png");
@@ -26,8 +25,7 @@ function uploadImgFile($fileInputValue, $maxSizeInKB)
             $targetPath = realpath("images/");
             $targetPath = $targetPath . DIRECTORY_SEPARATOR . basename($_FILES['img']['name']);
             if (!move_uploaded_file($_FILES['img']['tmp_name'], $targetPath)) {
-                $_SESSION['errorMessages'] = "There was an error uploading the file, please try again!";
-                return false;
+                 return false;
             }
         }
     } else {
