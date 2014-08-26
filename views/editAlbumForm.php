@@ -8,8 +8,7 @@
 </nav>
 <div class="user"></div>
 <hr/>
-</header>.
-<div class="main">
+</header>
 <?php
 if (isset($_SESSION['errorMessages'])) {
     ?>

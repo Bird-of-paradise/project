@@ -7,7 +7,6 @@
 <div class="user"></div>
 <hr/>
 </header>
-<div class="main">
 <div class="albums-container">
 <?php
 if (isset($_SESSION['errorMessages'])) {

@@ -1,6 +1,4 @@
-<!-- main-->
-</div>
-<!-- main-->
+
 <footer>
     <hr/>
     <div class="about">
