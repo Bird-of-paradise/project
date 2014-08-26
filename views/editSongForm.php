@@ -9,6 +9,7 @@
 <div class="user"></div>
 <hr/>
 </header>
+<div class="main">
 <?php
 if(isset($_SESSION['errorMessages'])) {
 	?>

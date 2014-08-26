@@ -83,7 +83,7 @@ header > nav li a {
 /*INDEX*/
 .main {
     width: 100%;
-    height: 500px;
+    min-height: 300px;
 }
 
 .indexLogo {
@@ -123,7 +123,7 @@ form input {
 .albums {
     display: inline-block;
     border: 1px solid black;
-    margin: 35px;
+    margin: 15px;
     /*margin-top: 70px;*/
     text-align: center;
     width: 265px;

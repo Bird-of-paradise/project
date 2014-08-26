@@ -12,6 +12,7 @@
 <script type="text/javascript" src="js/ManageSongs.js"></script>
 <script type="text/javascript" src="js/ManageAlbums.js"></script>
 </header>
+<div class="main">
 <div class="songs-container">
     <?php
     if (isset($_SESSION['errorMessages'])):
