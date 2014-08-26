@@ -37,6 +37,5 @@ if($count === 0) {
 	exit;
 }
 
-//and now here comes the big question about getting the song's id :D
 editSong($_SESSION['id_open_song'], $newArtist, $newFileName, $newGenre, $newName, $newText);
 ?>
