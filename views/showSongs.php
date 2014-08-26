@@ -1,5 +1,6 @@
 <nav>
     <ul>
+    	<li><a href="userPanel.php?action_user=7">Remove Album</a></li>
         <li><a href="userPanel.php?action_user=4">Edit album</a></li>
         <li><a href="userPanel.php?action_user=def">View albums</a></li>
         <li><a href="userPanel.php?action_user=3">Add song</a></li>

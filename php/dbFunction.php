@@ -250,6 +250,24 @@ function removeSong($id, $fileName) {
 	mysql_close($link);
 }
 
+//remove album
+function removeAlbum($id) {
+	$albumSongs = getSongs($id);
+	foreach($albumSongs as $song) {
+		removeSong($song['id'], $song['file_name']);
+	}
+	
+	$currentAlbum = getAlbum($id);
+	unlink($currentAlbum['img_file']);
+
+	$link = connectDatabase();
+	selectDatabase($link, MYSQL_DATABASE);
+	$sql = "delete from albums where id=${id}";
+	
+	setQuery($link, $sql);
+	mysql_close($link);	
+}
+
 function getAllAlbums(){
     $link = connectDatabase();
     selectDatabase($link, MYSQL_DATABASE);
