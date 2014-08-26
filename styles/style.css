@@ -16,44 +16,52 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     background: transparent;
     box-sizing: border-box;
 }
-body{
+
+body {
     width: 100%;
     /*height: 100%;*/
     font-size: 16px;
     font-family: Arial;
     background-color: #75B92F;
 }
+
 /*Header*/
 header {
     width: 100%;
     height: 100px;
     margin-bottom: 70px;
 }
-.welcome>h1{
+
+.welcome > h1 {
     font-size: 3em;
     text-align: center;
     display: inline-block;
     margin: 20px;
 }
-.welcome>h1 a{
+
+.welcome > h1 a {
     text-decoration: none;
     color: #7FCCFF;
 }
-.logo{
+
+.logo {
     display: inline-block;
     float: left;
     margin: 20px;
 }
-header>nav li{
+
+header > nav li {
     text-decoration: none;
     display: inline;
     margin: 20px 0 0 20px;
 
 }
-header>nav li a {
+
+header > nav li a {
     text-decoration: none;
     color: #B9722E;
 }
+
 .clearfix:after {
     content: ".";
     display: block;
@@ -62,11 +70,13 @@ header>nav li a {
     line-height: 0;
     height: 0;
 }
-.user{
+
+.user {
     float: right;
     display: inline-block;
 }
-.user>img{
+
+.user > img {
     width: 100px;
 }
 
@@ -75,14 +85,17 @@ header>nav li a {
     width: 100%;
     height: 500px;
 }
+
 .indexLogo {
     margin-top: 100px;
     text-align: center;
 }
-.indexLogo>img{
+
+.indexLogo > img {
     width: 450px;
 }
-.viewAlbums{
+
+.viewAlbums {
     text-align: right;
     margin: 20px;
 }
@@ -105,9 +118,9 @@ form input {
     margin: 25px auto;
     text-align: center;
 }
-/* Show All Albums*/
 
-.albums{
+/* Show All Albums*/
+.albums {
     display: inline-block;
     border: 1px solid black;
     margin: 35px;
@@ -116,32 +129,37 @@ form input {
     width: 265px;
 
 }
-.albums img{
+
+.albums img {
     width: 100%;
 
 }
+
 .albums a {
     text-decoration: none;
     color: black;
 }
-.albums h3{
+
+.albums h3 {
     background-color: #51B2D8;
 }
 
 /*Footer*/
-
-footer{
+footer {
     vertical-align: bottom;
 }
-.about{
+
+.about {
     text-align: center;
 }
-.about span{
-display: inline-block;
+
+.about span {
+    display: inline-block;
     vertical-align: middle;
     margin-left: 5px;
     margin-top: -40px;
 }
+
 .about li {
     display: inline-block;
     margin-left: 10px;
@@ -153,9 +171,20 @@ display: inline-block;
     font-size: 1.2em;
 
 }
-.about li img{
+
+.about li img {
     width: 50px;
     height: 50px;
     border: 1px solid black;
+}
+
+.songs-container {
+    width: 60%;
+    margin: 0 auto 50px auto;
+}
+
+.albums-container {
+    width: 90%;
+    margin: 0 auto 50px auto;
 }
 
