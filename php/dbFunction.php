@@ -235,6 +235,17 @@ function editSong($id, $newArtist, $newFileName, $newGenre, $newName, $newText) 
 	mysql_close($link);
 }
 
+//remove song
+function removeSong($id) {
+	$link = connectDatabase();
+	selectDatabase($link, 'album');
+	
+	$sql = "delete from songs where id=${id};";
+	
+	setQuery($link, $sql);
+	mysql_close($link);
+}
+
 function getAllAlbums(){
     $link = connectDatabase();
     selectDatabase($link, 'album');

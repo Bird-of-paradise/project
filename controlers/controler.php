@@ -84,6 +84,11 @@ if (isset($_REQUEST['action_guest'])) {
 			$model = 'models/editSong.php';
 			$view = DEFAULT_VIEW;
 			break;
+			
+		case '6':
+			$model = 'models/removeSong.php';
+			$view = DEFAULT_VIEW;
+			break;
 	
         case 'log out':
             unset($_SESSION['user']);

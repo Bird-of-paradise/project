@@ -9,6 +9,7 @@
     <td><?= $rows[$i]['name']?></td>
     <td><?= $rows[$i]['artist']?></td>
     <td><?= $rows[$i]['genre']?></td>
+    <td><a href=<?="?action_user=5&id_song=" . $rows[$i]['id']?>>edit</a> / <a href=<?="?action_user=6&id_song=" . $rows[$i]['id']?>>remove</a></td>
 </tr>
 <?php endfor; ?>
 </table>

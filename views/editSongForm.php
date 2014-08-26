@@ -4,6 +4,7 @@ if(isset($_SESSION['errorMessages'])) {
 	<div class="error"><?=$_SESSION['errorMessages']?></div>
 <?php
 }
+$_SESSION['id_open_song'] = $_GET['id_song'];
 ?>
 
 <form enctype="multipart/form-data" method="post">
