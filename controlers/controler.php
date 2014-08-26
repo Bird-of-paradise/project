@@ -94,6 +94,11 @@ if (isset($_REQUEST['action_guest'])) {
             unset($_SESSION['user']);
             break;
 
+        case 'about':
+            $model = null;
+            $view = 'views/about.php';
+            break;
+
         default:
             $view = DEFAULT_VIEW;
             $model = DEFAULT_MODEL;

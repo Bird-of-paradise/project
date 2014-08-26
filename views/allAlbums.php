@@ -1,6 +1,7 @@
 <nav>
     <ul>
         <li><a href="userPanel.php?action_user=1">Add album</a></li>
+        <li><a href="userPanel.php?action_user=about">About</a></li>
         <li><a href="userPanel.php?action_user=log out">Log out</a></li>
     </ul>
 </nav>
