@@ -214,6 +214,8 @@ function editSong($id, $newArtist, $newFileName, $newGenre, $newName, $newText) 
 		$count++;
 	}
 	if($newFileName !== null) {
+		$currentSong = getSong($id);
+		unlink("music/" . $currentSong['file_name']);
 		$sql .= "file_name='${newFileName}', ";
 		$count++;
 	}
@@ -237,10 +239,11 @@ function editSong($id, $newArtist, $newFileName, $newGenre, $newName, $newText) 
 }
 
 //remove song
-function removeSong($id) {
+function removeSong($id, $fileName) {
 	$link = connectDatabase();
-	selectDatabase($link, 'album');
-	
+	selectDatabase($link, MYSQL_DATABASE);
+
+	unlink("music/" . $fileName);
 	$sql = "delete from songs where id=${id};";
 	
 	setQuery($link, $sql);
