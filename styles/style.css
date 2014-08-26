@@ -106,16 +106,14 @@ form input {
     text-align: center;
 }
 /* Show All Albums*/
-footer{
-    vertical-align: bottom;
-}
+
 .albums{
     display: inline-block;
     border: 1px solid black;
-    margin: 25px;
+    margin: 35px;
     /*margin-top: 70px;*/
     text-align: center;
-    width: 350px;
+    width: 265px;
 
 }
 .albums img{
@@ -131,6 +129,7 @@ footer{
 }
 
 /*Footer*/
+
 footer{
     vertical-align: bottom;
 }
