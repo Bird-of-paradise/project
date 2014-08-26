@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Welcome</title>
+</head>
+<body>
+
+
 <?php
 session_start();
 ?>
@@ -17,3 +26,5 @@ session_start();
     </div>
 
 </div>
+</body>
+</html>
