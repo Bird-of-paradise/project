@@ -98,7 +98,7 @@ function addAlbum($albumName, $userId, $imgFileName)
 //Add song in database album
 function addSong($song, $idUser, $idAlbum, $fileName)
 {
-    $text = mysql_real_escape_string($song['text']);
+    //$text = mysql_real_escape_string($song['text']);
 
     $link = connectDatabase();
     selectDatabase($link, MYSQL_DATABASE);
