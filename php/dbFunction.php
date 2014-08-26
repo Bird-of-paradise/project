@@ -63,7 +63,7 @@ function addUser($user)
     $link = connectDatabase();
     selectDatabase($link, MYSQL_DATABASE);
     $sql = "INSERT INTO users (name, password, email) " .
-        "VALUES ('{$user['userName']}', '{$user['userPassword1']}', '{$user['email']}');";
+        "VALUES ('{$user['userName']}', '" . crypt($user['userPassword1']) . "', '{$user['email']}');";
     $result = setQuery($link, $sql);
     mysql_close($link);
 
