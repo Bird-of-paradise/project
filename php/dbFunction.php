@@ -263,3 +263,29 @@ function getAllAlbums(){
 
     return $albums;
 }
+
+function rankingMinus($rank){
+    $link = connectDatabase();
+    selectDatabase($link, MYSQL_DATABASE);
+    $sql = "update albums set ";
+
+    $sql .= "rank='${rank}'";
+    setQuery($link, $sql);
+    mysql_close($link);
+
+
+}
+function rankingPlus($id){
+
+    $link = connectDatabase();
+    selectDatabase($link, MYSQL_DATABASE);
+    $currentAlbum = getAlbum($id);
+    $currentRank = $currentAlbum['rank'] + 1;
+
+    $sql = "UPDATE albums SET rank = '{$currentRank}' WHERE id = '$id';";
+
+    setQuery($link, $sql);
+    mysql_close($link);
+
+
+}
