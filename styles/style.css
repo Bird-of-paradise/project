@@ -128,6 +128,7 @@ form input {
     /*margin-top: 70px;*/
     text-align: center;
     width: 265px;
+    background-color: #51B2D8;
 
 }
 
@@ -201,5 +202,22 @@ form textarea{
 .comments-container >.comment{
     margin-top: 20px;
     border: solid 1px #000
+}
+/*Ranking*/
+.rank, form {
+
+    padding: 0;
+    margin: 5px auto;
+    /*background-color: #51B2D8;*/
+    /*margin-left: 50px;*/
+}
+.rank input{
+    display: inline-block;
+    margin: 0;
+}
+.rank input{
+    background-color: #628EB5;
+    border: 1px solid #000000;
+    border-radius: 3px;
 }
 
