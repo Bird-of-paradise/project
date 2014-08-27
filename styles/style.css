@@ -179,7 +179,7 @@ footer {
     border: 1px solid black;
 }
 
-.songs-container {
+.songs-container, .comments-container {
     width: 60%;
     margin: 0 auto 50px auto;
 }
@@ -187,5 +187,19 @@ footer {
 .albums-container {
     width: 90%;
     margin: 0 auto 50px auto;
+}
+
+form textarea{
+    width: 100%;
+    display: block;
+}
+
+.comments-container comment-user {
+    margin-top: 10px;
+}
+
+.comments-container >.comment{
+    margin-top: 20px;
+    border: solid 1px #000
 }
 

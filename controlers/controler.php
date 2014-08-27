@@ -89,8 +89,26 @@ if (isset($_REQUEST['action_guest'])) {
 			$model = 'models/removeSong.php';
 			$view = DEFAULT_VIEW;
 			break;
-			
-			
+
+        //Show Add Comment Form
+        case '8':
+            $model = null;
+            $view = 'views/addCommentForm.php';
+            break;
+
+        //Show all Comment
+        case '9':
+            $model = 'models/getComments.php';
+            $view = 'views/viewComments.php';
+            break;
+
+        // Add Comment in DB
+        case 'Send':
+            $model = 'models/addComment.php';
+            $view = DEFAULT_VIEW;
+            break;
+
+        //remove song
 		case '7':
 			$model = 'models/removeAlbum.php';
 			$view = DEFAULT_VIEW;

@@ -288,6 +288,49 @@ function getAllAlbums(){
     return $albums;
 }
 
+//Add new comment in database album
+function addComment($content, $userId, $idAlbum)
+{
+    $link = connectDatabase();
+    selectDatabase($link, MYSQL_DATABASE);
+    $sql = "INSERT INTO comments (text, id_album, id_user, date) " .
+        "VALUES ('$content', '$idAlbum', '$userId', '" . date('d-m-Y') . "');";
+    $result = setQuery($link, $sql);
+    mysql_close($link);
+
+    if (!$result) {
+        echo "DB Error, could not query the database\n";
+        echo 'MySQL Error: ' . mysql_error();
+        exit;
+    } else {
+        return $result;
+    }
+}
+
+function getComments()
+{
+    $link = connectDatabase();
+    selectDatabase($link, MYSQL_DATABASE);
+    $sql = "SELECT comments.text, comments.date, users.name\n"
+        . "FROM comments\n"
+        . "INNER JOIN users\n"
+        . "ON users.id=comments.id_user";
+    $data = mysql_query($sql) or die(mysql_error());
+
+    $comments = array();
+
+    while ($comment = mysql_fetch_array($data)) {
+        $comments[] = $comment;
+    };
+
+
+    if (empty($comments)) {
+        return false;
+    }
+
+    return $comments;
+}
+
 function rankingMinus($rank){
     $link = connectDatabase();
     selectDatabase($link, MYSQL_DATABASE);
@@ -313,3 +356,4 @@ function rankingPlus($id){
 
 
 }
+

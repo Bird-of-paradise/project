@@ -4,6 +4,8 @@
         <li><a href="userPanel.php?action_user=4">Edit album</a></li>
         <li><a href="userPanel.php?action_user=def">View albums</a></li>
         <li><a href="userPanel.php?action_user=3">Add song</a></li>
+        <li><a href="userPanel.php?action_user=8">Add comment</a></li>
+        <li><a href="userPanel.php?action_user=9">View comments</a></li>
         <li><a href="userPanel.php?action_user=log out">Log out</a></li>
     </ul>
 </nav>
