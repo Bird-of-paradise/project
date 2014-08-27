@@ -8,3 +8,7 @@
 			document.location = "?action_user=6&id_song=" + id + "&file_name=" + fileName;
 		}
 	}
+	
+	function downloadSong(fileName) {
+		document.location = "?action_user=Download+Song&file_name=" + fileName;
+	}
