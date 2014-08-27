@@ -3,6 +3,7 @@
     	<li><a href="javascript:removeAlbum(<?=$_SESSION['id_open_album']?>)">Remove Album</a></li>
         <li><a href="userPanel.php?action_user=4">Edit album</a></li>
         <li><a href="userPanel.php?action_user=def">View albums</a></li>
+        <li><a href="userPanel.php?action_user=top 10">TOP 10 ALBUMS</a></li>
         <li><a href="userPanel.php?action_user=3">Add song</a></li>
         <li><a href="userPanel.php?action_user=8">Add comment</a></li>
         <li><a href="userPanel.php?action_user=9">View comments</a></li>

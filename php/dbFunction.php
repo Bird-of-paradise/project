@@ -284,6 +284,7 @@ function getAllAlbums(){
     if(empty($albums)){
         return false;
     }
+	mysql_close($link);
 
     return $albums;
 }
@@ -361,5 +362,28 @@ function ranking($id, $choice){
     mysql_close($link);
 
 
+}
+
+function getTop10Albums() {
+	$link = connectDatabase();
+	selectDatabase($link, MYSQL_DATABASE);
+	
+	$sql = "select * from albums order by rank desc limit 10;";
+	
+	$data = mysql_query($sql) or die(mysql_error());
+	
+	$albums = array();
+
+    while ($album = mysql_fetch_array($data)) {
+        $albums[] = $album;
+    };
+
+    if(empty($albums)){
+        return false;
+    }
+	mysql_close($link);
+
+    return $albums;
+	
 }
 

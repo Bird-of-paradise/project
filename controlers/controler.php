@@ -134,6 +134,11 @@ if (isset($_REQUEST['action_guest'])) {
             $model2 = DEFAULT_MODEL;
             $view = 'views/allAlbums.php';
             break;
+			
+		case 'top 10':
+			$model = 'models/top10Albums.php';
+			$view = DEFAULT_VIEW;
+			break;
 
 
         default:
