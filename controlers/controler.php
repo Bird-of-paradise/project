@@ -128,14 +128,13 @@ if (isset($_REQUEST['action_guest'])) {
             $view = 'views/about.php';
             break;
 
-        case 'plus':
-            $model = 'models/rankPlus.php';
-            $view = 'views/allAlbums.php';
-            break;
         case 'minus':
-            $model = rankMinus;
+        case 'plus':
+            $model = 'models/rank.php';
+            $model2 = DEFAULT_MODEL;
             $view = 'views/allAlbums.php';
             break;
+
 
         default:
             $view = DEFAULT_VIEW;

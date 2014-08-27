@@ -342,14 +342,20 @@ function rankingMinus($rank){
 
 
 }
-function rankingPlus($id){
+function ranking($id, $choice){
 
+    $currentAlbum = getAlbum($id);
     $link = connectDatabase();
     selectDatabase($link, MYSQL_DATABASE);
-    $currentAlbum = getAlbum($id);
-    $currentRank = $currentAlbum['rank'] + 1;
+    if($choice == 'plus'){
+        $currentRank = $currentAlbum['rank'] + 1;
+    } else {
+        $currentRank = $currentAlbum['rank'] - 1;
+    }
 
-    $sql = "UPDATE albums SET rank = '{$currentRank}' WHERE id = '$id';";
+
+
+    $sql = "UPDATE albums SET rank = '{$currentRank}' WHERE id = '{$id}'";
 
     setQuery($link, $sql);
     mysql_close($link);
